@@ -1,0 +1,80 @@
+.nav {
+    width: 100%;
+    height: 50px;
+}
+
+nav {
+    background-color: black;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    transition: 300ms;
+    overflow: auto
+}
+
+nav ul{
+    margin: 0px;
+    width: 400px;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    right: 0px;
+    justify-content: space-evenly;
+}
+
+nav button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: larger;
+}
+
+nav button:hover {
+    cursor: pointer;
+}
+
+nav li{
+    text-align: center;
+    padding-top: 20px
+}
+
+.sub-title {
+    color: white;
+}
+
+
+.footerMain {
+    height: 200px;
+    width: 100%;
+    background-color: rgb(33, 32, 32);
+}
+
+.footerSocials {
+    position: relative;
+    display: flex;
+    color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    width: 100%;
+}
+
+.icon {
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.25em;
+}
+
+a:hover {
+    color: white
+}
