@@ -1,9 +1,10 @@
 .main {
   position: absolute;
   background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+  margin: 0px;
+  padding: 0px;
   width: 100%;
-  height: 100%;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .home, .about, .projects {
@@ -30,6 +31,4 @@
 
 .body {
   position: relative;
-  width: 100%;
-  min-height: 100vh;
 }

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import './Utils/hideNav'
 
 import Navbar from './components/navbar';
 import Body from './components/body';

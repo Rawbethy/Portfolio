@@ -18,7 +18,11 @@ export default class Body extends Component {
                 <section className="projects">
                     <div className="sub-title" id='projects'>
                         <h2>This is the Projects component</h2>
-                    </div>                    
+                    </div>  
+
+                    <div className="project-main">
+
+                    </div>                 
                 </section>
             </div>
         )

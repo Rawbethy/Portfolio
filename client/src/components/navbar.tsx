@@ -1,5 +1,4 @@
-import React from 'react';
-import useScrollDirection from '../Utils/scrollDirection';
+import React, {useEffect} from 'react';
 import './styles.css'
 
 export default function NavBar() {
@@ -10,8 +9,28 @@ export default function NavBar() {
             element.scrollIntoView({block: 'start', behavior: 'smooth'});
         }
     }
+    
+    const hideNav = () => {
+        let theEnd = 0;
+        var navbar = document.getElementById('navbar') as HTMLElement;
+    
+        if(navbar !== null) {
+            window.addEventListener('scroll', function() {
+                var scrollTop = window.pageXOffset || document.documentElement.scrollTop;
+                if(scrollTop > theEnd) {
+                    navbar.style.top = '-50px';
+                }
+                else {
+                    navbar.style.top = '0';
+                }
+                theEnd = scrollTop;
+            })
+        }
+    }
 
-    const scrollDirection = useScrollDirection();
+    useEffect(() => {
+        hideNav()
+    }, [])
 
     return (
         <div className="nav">
