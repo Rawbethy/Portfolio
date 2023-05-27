@@ -26,20 +26,35 @@ nav ul{
     justify-content: space-evenly;
 }
 
+nav li{
+    text-align: center;
+    padding: 15px;
+}
+
 nav button {
     border: none;
+    cursor: pointer;
     background-color: transparent;
     color: white;
     font-size: larger;
 }
 
-nav button:hover {
-    cursor: pointer;
+nav button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.35s ease-out;
 }
 
-nav li{
-    text-align: center;
-    padding-top: 20px
+nav button:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .sub-title {
