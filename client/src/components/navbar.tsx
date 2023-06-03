@@ -36,9 +36,9 @@ export default function NavBar() {
         <div className="nav">
             <nav id="navbar">
                 <ul>
-                    <li><button onClick={() => handleClickScroll('home')}>Home</button></li>
-                    <li><button onClick={() => handleClickScroll('about')}>About</button></li>
-                    <li><button onClick={() => handleClickScroll('projects')}>Projects</button></li>
+                    <li><button className='nav-button' onClick={() => handleClickScroll('home')}>Home</button></li>
+                    <li><button className='nav-button' onClick={() => handleClickScroll('about')}>About</button></li>
+                    <li><button className='nav-button' onClick={() => handleClickScroll('projects')}>Projects</button></li>
                 </ul>
             </nav>
         </div>

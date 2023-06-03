@@ -6,8 +6,8 @@ export default class Body extends Component {
         return (
             <div className="body">
                 <section className="home">
-                    <div className='sub-title' id='home'>
-                        <h2>This is the Home component</h2>
+                    <div className='home-title' id='home'>
+                        <h1>Greetings!✌<br /><br />My name is Robert and I am an aspiring web developer and software developer</h1>
                     </div>
                 </section>     
                 <section className='about'>

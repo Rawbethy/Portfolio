@@ -32,3 +32,8 @@
 .body {
   position: relative;
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Utils/fonts/RobotoMono-VariableFont_wght.ttf') format('truetype');
+}

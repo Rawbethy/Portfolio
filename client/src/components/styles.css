@@ -23,12 +23,14 @@ nav ul{
     position: absolute;
     display: flex;
     right: 0px;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 nav li{
     text-align: center;
-    padding: 15px;
+    display: inline-block;
+    position: relative;
+    margin: 10px;
 }
 
 nav button {
@@ -55,6 +57,20 @@ nav button::after {
 nav button:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.home-title {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.home-title h1 {
+    font-size: xx-large;
+    font-family: 'Roboto';
 }
 
 .sub-title {
