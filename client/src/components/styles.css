@@ -63,13 +63,12 @@ nav button:hover::after {
     position: relative;
     text-align: center;
     color: white;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
 
 }
 
-.home-title h1 {
-    font-size: xx-large;
+.home-title h1, .home-title h2 {
     font-family: 'Roboto';
 }
 
