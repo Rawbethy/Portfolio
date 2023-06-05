@@ -79,8 +79,11 @@ nav button:hover::after {
     color: white;
 }
 
-.sub-title h2 {
-    margin: 0px;
+.hobbies {
+    width: auto;
+    height: 75%;
+    color: white;
+    margin-left: 5%;
 }
 
 .projects {
