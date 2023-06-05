@@ -77,19 +77,22 @@ export default class Body extends Component<{}, BodyState> {
                     <div className='sub-title' id='about'>
                         <h2>This is the About component</h2>
                     </div>
-                    <div className='hobbies' id='hobbies' ref={this.containerRef}>
-                        <h3>Photography</h3>
-                        {dimensions && (
-                            <SimpleImageSlider 
-                            width={dimensions.width*.75}
-                            height={dimensions.height}
-                            images={sliderImages}
-                            autoPlay={true}
-                            autoPlayDelay={4.5}
-                            showNavs={false}
-                            showBullets={false}
-                            />
-                        )}
+                    <div className='hobbies' id='hobbies'>
+                        <div className="imageSlider" ref={this.containerRef}>
+                          <h3>Photography</h3>
+                          {dimensions && (
+                              <SimpleImageSlider 
+                              style={{marginLeft: 'auto', marginRight: 'auto'}}
+                              width={dimensions.width/1.5}
+                              height={dimensions.width/2}
+                              images={sliderImages}
+                              autoPlay={true}
+                              autoPlayDelay={4.5}
+                              showNavs={true}
+                              showBullets={true}
+                              />
+                          )}
+                        </div>
                     </div>
                 </section>
                 <section className="projects">
