@@ -81,9 +81,10 @@ nav button:hover::after {
 
 .hobbies {
     width: auto;
-    height: 75%;
+    height: 60%;
     color: white;
-    margin-left: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .projects {

@@ -2,17 +2,44 @@ import React, {Component} from 'react';
 import SimpleImageSlider from 'react-simple-image-slider';
 import './styles.css'
 
-export default class Body extends Component {
+interface BodyState {
+    dimensions: {
+        width: number;
+        height: number
+    } | null;
+}
+
+export default class Body extends Component<{}, BodyState> {
+    containerRef: any;
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            dimensions: null
+        };
+        this.containerRef = React.createRef();
+    }
+
+    componentDidMount() {
+        const containerElement = this.containerRef.current;
+        this.setState({
+            dimensions: {
+                width: containerElement.offsetWidth,
+                height: containerElement.offsetHeight
+            }
+        });
+    }
 
     render() {
+        const {dimensions} = this.state
         const h2Style = {
             fontSize: '30px',
         };
 
         const sliderImages = [
-            {url: "https://img.freepik.com/free-photo/wide-angle-shot-singletree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg"},
-            {url: '../Utils/images/img639.jpg'},
-            {url: '../Utils/images/img640.jpg'}
+            {url: "https://drive.google.com/uc?export=view&id=1oiXtPLaPQ4ytsJ-046aeytvX8z6ve3fK"},
+            {url: 'https://drive.google.com/uc?export=view&id=1VDbaFcyOw-z-YLHCCF2PDk2L6OofgHoy'},
+            {url: 'https://drive.google.com/uc?export=view&id=1MBMUHhQhP3jZASkx5avn7W_fHe7E1TYG'}
         ]
 
         return (
@@ -30,17 +57,19 @@ export default class Body extends Component {
                     <div className='sub-title' id='about'>
                         <h2>This is the About component</h2>
                     </div>
-                    <div className='hobbies' id='hobbies'>
+                    <div className='hobbies' id='hobbies' ref={this.containerRef}>
                         <h3>Photography</h3>
-                        <SimpleImageSlider 
-                            width={document.getElementById('hobbies').offsetWidth}
-                            height={document.getElementById('hobbies').offsetHeight}
+                        {dimensions && (
+                            <SimpleImageSlider 
+                            width={dimensions.width}
+                            height={dimensions.height}
                             images={sliderImages}
                             autoPlay={true}
-                            autoPlayDelay={2.5}
+                            autoPlayDelay={3}
                             showNavs={false}
                             showBullets={false}
-                        />
+                            />
+                        )}
                     </div>
                 </section>
                 <section className="projects">
