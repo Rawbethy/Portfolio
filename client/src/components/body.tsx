@@ -1,34 +1,54 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import SimpleImageSlider from 'react-simple-image-slider';
-import './styles.css'
+import './styles.css';
 
 interface BodyState {
-    dimensions: {
-        width: number;
-        height: number
-    } | null;
+  dimensions: {
+    width: number;
+    height: number;
+  } | null;
 }
 
 export default class Body extends Component<{}, BodyState> {
-    containerRef: any;
+  constructor(props: {}) {
+    super(props);
+    this.state = {
+      dimensions: null
+    };
+    this.containerRef = React.createRef();
+  }
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            dimensions: null
+  componentDidMount() {
+    this.updateDimensions();
+    window.addEventListener('resize', this.updateDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
+  }
+
+  componentDidUpdate() {
+    this.updateDimensions();
+  }
+
+  containerRef: React.RefObject<HTMLDivElement>;
+
+  updateDimensions = () => {
+    const containerElement = this.containerRef.current;
+    if (containerElement) {
+        const dimensions = {
+            width: containerElement.offsetWidth,
+            height: containerElement.offsetHeight
         };
-        this.containerRef = React.createRef();
+    if (
+        !this.state.dimensions ||
+        dimensions.width !== this.state.dimensions.width ||
+        dimensions.height !== this.state.dimensions.height
+      ) {
+        this.setState({ dimensions });
+      }
     }
-
-    componentDidMount() {
-        const containerElement = this.containerRef.current;
-        this.setState({
-            dimensions: {
-                width: containerElement.offsetWidth,
-                height: containerElement.offsetHeight
-            }
-        });
-    }
+  };
 
     render() {
         const {dimensions} = this.state
@@ -61,11 +81,11 @@ export default class Body extends Component<{}, BodyState> {
                         <h3>Photography</h3>
                         {dimensions && (
                             <SimpleImageSlider 
-                            width={dimensions.width}
+                            width={dimensions.width*.75}
                             height={dimensions.height}
                             images={sliderImages}
                             autoPlay={true}
-                            autoPlayDelay={3}
+                            autoPlayDelay={4.5}
                             showNavs={false}
                             showBullets={false}
                             />
