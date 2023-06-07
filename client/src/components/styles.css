@@ -75,7 +75,7 @@ nav button:hover::after {
 .sub-title {
     position: relative;
     text-align: left;
-    margin: 10px;
+    margin: 15px;
     color: white;
 }
 
@@ -133,4 +133,20 @@ a {
 
 a:hover {
     color: white
+}
+
+.homeContent-before {
+    opacity: 0;
+    transform: translateX(0);
+}
+
+.animate-before {
+    opacity: 0;
+    transform: translateX(-10%);
+}
+
+.animate-after {
+    opacity: 1;
+    transform: translateX(30px);
+    transition: all .7s;
 }

@@ -8,20 +8,40 @@ export default class Body extends Component<any, any> {
     this.state = {
       width: Number,
       height: Number,
-      visible: null
+      homeVisible: null,
+      aboutVisible: null,
+      imagesVisible: null,
+      projectsVisible: null
     };
+
+    this.homeRef = React.createRef();
+    this.aboutRef = React.createRef();
     this.imagesRef = React.createRef();
-    this.projectRef = React.createRef();
+    this.projectsRef = React.createRef();
   }
 
   componentDidMount() {
     this.updateDimensions();
     window.addEventListener('resize', this.updateDimensions);
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      this.setState({visible: entry.isIntersecting})
+
+    const observerHome = new IntersectionObserver((entries1) => {
+      const entry1 = entries1[0];
+      this.setState({homeVisible: entry1.isIntersecting})
     })
-    observer.observe(this.projectRef.current);
+
+    const observerAbout = new IntersectionObserver((entries2) => {
+      const entry2 = entries2[0];
+      this.setState({aboutVisible: entry2.isIntersecting})
+    })
+    
+    const observerProjects = new IntersectionObserver((entries3) => {
+      const entry3 = entries3[0];
+      this.setState({projectsVisible: entry3.isIntersecting})
+    })
+
+    observerHome.observe(this.homeRef.current);
+    observerAbout.observe(this.aboutRef.current);
+    observerProjects.observe(this.projectsRef.current);
   }
 
   componentWillUnmount() {
@@ -30,14 +50,14 @@ export default class Body extends Component<any, any> {
 
   componentDidUpdate() {
     this.updateDimensions();
-    console.log(this.state.width);
   }
 
+  homeRef: React.RefObject<HTMLDivElement>;
+  aboutRef: React.RefObject<HTMLDivElement>;
   imagesRef: React.RefObject<HTMLDivElement>;
-  projectRef: React.RefObject<HTMLDivElement>;
+  projectsRef: React.RefObject<HTMLDivElement>;
 
   updateDimensions = () => {
-    console.log(this.imagesRef);
     const containerElement = this.imagesRef.current;
     if (containerElement) {
         const dimensions = {
@@ -69,17 +89,17 @@ export default class Body extends Component<any, any> {
         return (
             <div className="body">
                 <section className="home">
-                    <div className='home-title' id='home'>
-                        <h1 style={{fontSize: '40px'}}>✌Greetings!✌</h1>
-                        <h2 style={h2Style}>My name is Robert, I am an aspiring 
+                    <div className='home-title' id='home' ref={this.homeRef}>
+                        <h1 style={{fontSize: '40px'}} className={this.state.homeVisible ? 'animate-after': 'homeContent-before'}>✌Greetings!✌</h1>
+                        <h2 style={h2Style} className={this.state.homeVisible ? 'animate-after': 'homeContent-before'}>My name is Robert, I am an aspiring 
                         web/software developer from Houston who is always seeking opportunites
                         to take on tough challenges and implement new technologies</h2>
-                        <h2 style={h2Style}>Please enjoy my personal portfolio!</h2>
+                        <h2 style={h2Style} className={this.state.homeVisible ? 'animate-after': 'homeContent-before'}>Please enjoy my personal portfolio!</h2>
                     </div>
                 </section>     
                 <section className='about' id='section-about'>
-                    <div className='sub-title' id='about'>
-                        <h2>This is the About component</h2>
+                    <div className='sub-title' id='about' ref={this.aboutRef}>
+                        <h2 className={this.state.aboutVisible ? 'animate-after': 'animate-before'}>This is the About component</h2>
                     </div>
                     <div className='hobbies' id='hobbies'>
                         <div className="imageSlider" ref={this.imagesRef}>
@@ -100,8 +120,8 @@ export default class Body extends Component<any, any> {
                     </div>
                 </section>
                 <section className="projects">
-                    <div className="sub-title" id='projects' ref={this.projectRef}>
-                        <h2>This is the Projects component</h2>
+                    <div className="sub-title" id='projects' ref={this.projectsRef}>
+                        <h2 className={this.state.projectsVisible ? 'animate-after': 'animate-before'}>This is the Projects component</h2>
                     </div>  
 
                     <div className="project-main">
