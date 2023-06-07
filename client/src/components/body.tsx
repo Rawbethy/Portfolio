@@ -1,26 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, ReactElement } from 'react';
 import SimpleImageSlider from 'react-simple-image-slider';
 import './styles.css';
 
-interface BodyState {
-  dimensions: {
-    width: number;
-    height: number;
-  } | null;
-}
-
-export default class Body extends Component<{}, BodyState> {
+export default class Body extends Component<any, any> {
   constructor(props: {}) {
     super(props);
     this.state = {
-      dimensions: null
+      width: Number,
+      height: Number,
+      visible: null
     };
-    this.containerRef = React.createRef();
+    this.imagesRef = React.createRef();
+    this.projectRef = React.createRef();
   }
 
   componentDidMount() {
     this.updateDimensions();
     window.addEventListener('resize', this.updateDimensions);
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      this.setState({visible: entry.isIntersecting})
+    })
+    observer.observe(this.projectRef.current);
   }
 
   componentWillUnmount() {
@@ -29,29 +30,32 @@ export default class Body extends Component<{}, BodyState> {
 
   componentDidUpdate() {
     this.updateDimensions();
+    console.log(this.state.width);
   }
 
-  containerRef: React.RefObject<HTMLDivElement>;
+  imagesRef: React.RefObject<HTMLDivElement>;
+  projectRef: React.RefObject<HTMLDivElement>;
 
   updateDimensions = () => {
-    const containerElement = this.containerRef.current;
+    console.log(this.imagesRef);
+    const containerElement = this.imagesRef.current;
     if (containerElement) {
         const dimensions = {
             width: containerElement.offsetWidth,
             height: containerElement.offsetHeight
         };
     if (
-        !this.state.dimensions ||
-        dimensions.width !== this.state.dimensions.width ||
-        dimensions.height !== this.state.dimensions.height
+        !this.state.width || !this.state.height ||
+        dimensions.width !== this.state.width ||
+        dimensions.height !== this.state.height
       ) {
-        this.setState({ dimensions });
+        this.setState({width: dimensions.width, height: dimensions.height });
       }
     }
   };
 
     render() {
-        const {dimensions} = this.state
+        const {height, width} = this.state;
         const h2Style = {
             fontSize: '30px',
         };
@@ -78,13 +82,13 @@ export default class Body extends Component<{}, BodyState> {
                         <h2>This is the About component</h2>
                     </div>
                     <div className='hobbies' id='hobbies'>
-                        <div className="imageSlider" ref={this.containerRef}>
+                        <div className="imageSlider" ref={this.imagesRef}>
                           <h3>Photography</h3>
-                          {dimensions && (
+                          {height && width && (
                               <SimpleImageSlider 
                               style={{marginLeft: 'auto', marginRight: 'auto'}}
-                              width={dimensions.width/1.5}
-                              height={dimensions.width/2}
+                              width={width/1.5}
+                              height={width/2}
                               images={sliderImages}
                               autoPlay={true}
                               autoPlayDelay={4.5}
@@ -96,7 +100,7 @@ export default class Body extends Component<{}, BodyState> {
                     </div>
                 </section>
                 <section className="projects">
-                    <div className="sub-title" id='projects'>
+                    <div className="sub-title" id='projects' ref={this.projectRef}>
                         <h2>This is the Projects component</h2>
                     </div>  
 
