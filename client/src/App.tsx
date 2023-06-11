@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-import './Utils/hideNav';
 import './Utils/fonts/RobotoMono-VariableFont_wght.ttf';
 
 import Navbar from './components/navbar';

@@ -1,5 +1,6 @@
 import React, { Component, ReactElement } from 'react';
 import SimpleImageSlider from 'react-simple-image-slider';
+import Desc from '../Utils/Descriptions';
 import './styles.css';
 
 export default class Body extends Component<any, any> {
@@ -100,6 +101,12 @@ export default class Body extends Component<any, any> {
                 <section className='about' id='section-about'>
                     <div className='sub-title' id='about' ref={this.aboutRef}>
                         <h2 className={this.state.aboutVisible ? 'animate-after': 'animate-before'}>This is the About component</h2>
+                    </div>
+                    <div className="aboutMe">
+                      <div className="sub-title2">
+                        <h3 className={this.state.aboutVisible ? 'animate-after-sub': 'animate-before'}>Who am I?</h3>
+                      </div>
+                      <p className={this.state.aboutVisible ? 'animate-after': 'animate-before'}>{Desc.AboutMe}</p>
                     </div>
                     <div className='hobbies' id='hobbies'>
                         <div className="imageSlider" ref={this.imagesRef}>

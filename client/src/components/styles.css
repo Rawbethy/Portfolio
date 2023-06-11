@@ -4,7 +4,7 @@
 }
 
 nav {
-    background-color: black;
+    background-color: #222222;
     position: fixed;
     height: 50px;
     width: 100%;
@@ -72,12 +72,13 @@ nav button:hover::after {
     font-family: 'Roboto';
 }
 
-.sub-title {
+.sub-title, .sub-title2 {
     position: relative;
     text-align: left;
     margin: 15px;
     color: white;
 }
+
 
 .hobbies {
     position: relative;
@@ -131,6 +132,14 @@ a {
     font-size: 1.25em;
 }
 
+p {
+    color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 18px;
+    font-style: italic;
+}
+
 a:hover {
     color: white
 }
@@ -147,6 +156,13 @@ a:hover {
 
 .animate-after {
     opacity: 1;
-    transform: translateX(30px);
+    transform: translateX(0px);
+    transition: all .7s;
+}
+
+.animate-after-sub {
+    width: 100%;
+    opacity: 1;
+    transform: translateX(10px);
     transition: all .7s;
 }
