@@ -109,21 +109,24 @@ export default class Body extends Component<any, any> {
                       <p className={this.state.aboutVisible ? 'animate-after': 'animate-before'}>{Desc.AboutMe}</p>
                     </div>
                     <div className='hobbies' id='hobbies'>
-                        <div className="imageSlider" ref={this.imagesRef}>
-                          <h3>Photography</h3>
-                          {height && width && (
-                              <SimpleImageSlider 
-                              style={{marginLeft: 'auto', marginRight: 'auto'}}
-                              width={width/1.5}
-                              height={width/2}
-                              images={sliderImages}
-                              autoPlay={true}
-                              autoPlayDelay={4.5}
-                              showNavs={true}
-                              showBullets={true}
-                              />
-                          )}
-                        </div>
+                      <div className="sub-title2">
+                        <h3 className={this.state.aboutVisible ? 'animate-after-sub': 'animate-before'}>Hobbies</h3>
+                      </div>
+                      <div className="imageSlider" ref={this.imagesRef}>
+                        <h3>Photography</h3>
+                        {height && width && (
+                            <SimpleImageSlider 
+                            style={{marginLeft: 'auto', marginRight: 'auto'}}
+                            width={width/1.5}
+                            height={width/2}
+                            images={sliderImages}
+                            autoPlay={true}
+                            autoPlayDelay={4.5}
+                            showNavs={true}
+                            showBullets={true}
+                            />
+                        )}
+                      </div>
                     </div>
                 </section>
                 <section className="projects">
