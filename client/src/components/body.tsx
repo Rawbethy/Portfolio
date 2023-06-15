@@ -1,4 +1,4 @@
-import React, { Component, ReactElement } from 'react';
+import React, { Component, ReactElement} from 'react';
 import SimpleImageSlider from 'react-simple-image-slider';
 import Desc from '../Utils/Descriptions';
 import './styles.css';
