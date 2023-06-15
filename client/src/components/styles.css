@@ -72,7 +72,7 @@ nav button:hover::after {
     font-family: 'Roboto';
 }
 
-.sub-title, .sub-title2 {
+.about-title, .project-title, .sub-title2 {
     position: relative;
     text-align: left;
     margin: 15px;
