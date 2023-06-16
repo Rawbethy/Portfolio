@@ -8,9 +8,9 @@ export default class Body extends Component<any, any> {
   home_ref: React.RefObject<HTMLDivElement>;
   about_title_ref: React.RefObject<HTMLDivElement>;
   about_who_ref: React.RefObject<HTMLDivElement>;
+  about_hobbies_ref: React.RefObject<HTMLDivElement>;
   images_ref: React.RefObject<HTMLDivElement>;
   projects_ref: React.RefObject<HTMLDivElement>;
-  references: any[] = [];
   ref1 = {}
   
 
@@ -22,6 +22,7 @@ export default class Body extends Component<any, any> {
       home_visible: null,
       about_title_visible: null,
       about_who_visible: null,
+      about_hobbies_visible: null,
       images_visible: null,
       projects_visible: null
     };
@@ -29,6 +30,7 @@ export default class Body extends Component<any, any> {
     this.home_ref = React.createRef();
     this.about_title_ref = React.createRef();
     this.about_who_ref = React.createRef();
+    this.about_hobbies_ref = React.createRef();
     this.images_ref = React.createRef();
     this.projects_ref = React.createRef();
 
@@ -36,16 +38,10 @@ export default class Body extends Component<any, any> {
       'home-title': [this.home_ref, 'home_visible'],
       'about-title': [this.about_title_ref, 'about_title_visible'],
       'about-who': [this.about_who_ref, 'about_who_visible'],
+      'about-hobbies': [this.about_hobbies_ref, 'about_hobbies_visible'],
       'imageSlider': [this.images_ref, 'images_visible'],
       'project-title': [this.projects_ref, 'projects_visible']
     }
-
-    this.references.push({key: 'home-title', value: [this.home_ref, 'projects_visible']},
-                          {key: 'about-title', value: [this.about_title_ref, 'projects_visible']},
-                          {key: 'about-who', value: [this.about_who_ref, 'projects_visible']},
-                          {key: 'imageSlider', value: [this.images_ref, 'projects_visible']},
-                          {key: 'project-title', value: [this.projects_ref, 'projects_visible']});
-    
   }
 
   componentDidMount() {
@@ -123,8 +119,8 @@ export default class Body extends Component<any, any> {
                       <p className={this.state.about_who_visible ? 'animate-after': 'animate-before'}>{Desc.AboutMe}</p>
                     </div>
                     <div className='hobbies' id='hobbies'>
-                      <div className="sub-title2">
-                        <h3 className={this.state.about_visible ? 'animate-after-sub': 'animate-before'}>Hobbies</h3>
+                      <div className="about-hobbies" ref={this.about_hobbies_ref}>
+                        <h3 className={this.state.about_hobbies_visible ? 'animate-after-sub': 'animate-before'}>Hobbies</h3>
                       </div>
                       <div className="imageSlider" ref={this.images_ref}>
                         <h3>Photography</h3>
