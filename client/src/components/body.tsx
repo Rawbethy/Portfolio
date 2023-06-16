@@ -123,19 +123,21 @@ export default class Body extends Component<any, any> {
                         <h3 className={this.state.about_hobbies_visible ? 'animate-after-sub': 'animate-before'}>Hobbies</h3>
                       </div>
                       <div className="imageSlider" ref={this.images_ref}>
-                        <h3>Photography</h3>
-                        {height && width && (
-                            <SimpleImageSlider 
-                            style={{marginLeft: 'auto', marginRight: 'auto'}}
-                            width={width/1.5}
-                            height={width/2}
-                            images={sliderImages}
-                            autoPlay={true}
-                            autoPlayDelay={4.5}
-                            showNavs={true}
-                            showBullets={true}
-                            />
-                        )}
+                        <h3 className={this.state.images_visible ? 'animate-after': 'animate-before'}>Photography</h3>
+                        <div className={this.state.images_visible ? 'animate-after': 'animate-before'}>
+                          {height && width && (this.state.images_visible) && (
+                              <SimpleImageSlider 
+                              style={{marginLeft: 'auto', marginRight: 'auto'}}
+                              width={width/1.5}
+                              height={width/2}
+                              images={sliderImages}
+                              autoPlay={true}
+                              autoPlayDelay={4.5}
+                              showNavs={true}
+                              showBullets={true}
+                              />
+                          )}
+                        </div>
                       </div>
                     </div>
                 </section>
