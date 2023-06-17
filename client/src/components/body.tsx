@@ -2,6 +2,7 @@ import React, { Component, ReactElement} from 'react';
 import SimpleImageSlider from 'react-simple-image-slider';
 import Desc from '../Utils/Descriptions';
 import './styles.css';
+import './styles/projects-styles.css';
 
 export default class Body extends Component<any, any> {
 
@@ -40,7 +41,7 @@ export default class Body extends Component<any, any> {
       'about-who': [this.about_who_ref, 'about_who_visible'],
       'about-hobbies': [this.about_hobbies_ref, 'about_hobbies_visible'],
       'imageSlider': [this.images_ref, 'images_visible'],
-      'project-title': [this.projects_ref, 'projects_visible']
+      'projects-title': [this.projects_ref, 'projects_visible']
     }
   }
 
@@ -87,6 +88,7 @@ export default class Body extends Component<any, any> {
 
     render() {
         const {height, width} = this.state;
+        
         const h2Style = {
             fontSize: '30px',
         };
@@ -128,8 +130,8 @@ export default class Body extends Component<any, any> {
                           {height && width && (this.state.images_visible) && (
                               <SimpleImageSlider 
                               style={{marginLeft: 'auto', marginRight: 'auto'}}
-                              width={width/1.5}
-                              height={width/2}
+                              width={width/2}
+                              height={width/2.5}
                               images={sliderImages}
                               autoPlay={true}
                               autoPlayDelay={4.5}
@@ -142,13 +144,17 @@ export default class Body extends Component<any, any> {
                     </div>
                 </section>
                 <section className="projects">
-                    <div className="project-title" id='projects' ref={this.projects_ref}>
-                        <h2 className={this.state.projects_visible ? 'animate-after': 'animate-before'}>This is the Projects component</h2>
+                    <div className="projects-title" id='projects' ref={this.projects_ref}>
+                      <h2 className={this.state.projects_visible ? 'animate-after': 'animate-before'}>This is the Projects component</h2>
                     </div>  
+                    <div className="projects-main">
+                      <div className="left-column">
 
-                    <div className="project-main">
+                      </div>
+                      <div className="right-column">
 
-                    </div>                 
+                      </div>
+                    </div>               
                 </section>
             </div>
         )
