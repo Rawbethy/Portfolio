@@ -11,15 +11,38 @@
 }
 
 .projects-main {
-    position: relative;
-    display: block;
+    display: flex;
     height: 95%;
     width: auto;
 }
 
+/* .projects-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 50%;
+    width: 100%;
+} */
+
+.projects-first, .projects-second {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 50%;
+    width: 100%;
+}
+
+.projects-content {
+    position: relative;
+    width: 75%;
+    max-width: 400px;
+    height: 75%;
+    background-color: white;
+    cursor: pointer;
+}
+
 .left-column {
     position: relative;
-    float: left;
     height: 100%;
     width: 50%;
     margin: auto;
@@ -27,7 +50,6 @@
 
 .right-column {
     position: relative;
-    float: right;
     height: 100%;
     width: 50%;
     margin: auto;

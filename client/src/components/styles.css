@@ -150,12 +150,12 @@ a:hover {
 .animate-after {
     opacity: 1;
     transform: translateX(0px);
-    transition: all .7s;
+    transition: all 1s;
 }
 
 .animate-after-sub {
     width: 100%;
     opacity: 1;
     transform: translateX(10px);
-    transition: all .7s;
+    transition: all 1s;
 }

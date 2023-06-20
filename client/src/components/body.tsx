@@ -11,7 +11,9 @@ export default class Body extends Component<any, any> {
   about_who_ref: React.RefObject<HTMLDivElement>;
   about_hobbies_ref: React.RefObject<HTMLDivElement>;
   images_ref: React.RefObject<HTMLDivElement>;
-  projects_ref: React.RefObject<HTMLDivElement>;
+  projects_title_ref: React.RefObject<HTMLDivElement>;
+  projects_first_ref: React.RefObject<HTMLDivElement>;
+  projects_second_ref: React.RefObject<HTMLDivElement>;
   ref1 = {}
   
 
@@ -25,7 +27,9 @@ export default class Body extends Component<any, any> {
       about_who_visible: null,
       about_hobbies_visible: null,
       images_visible: null,
-      projects_visible: null
+      projects_title_visible: null,
+      projects_first_visible: null,
+      projects_second_visible: null
     };
 
     this.home_ref = React.createRef();
@@ -33,7 +37,9 @@ export default class Body extends Component<any, any> {
     this.about_who_ref = React.createRef();
     this.about_hobbies_ref = React.createRef();
     this.images_ref = React.createRef();
-    this.projects_ref = React.createRef();
+    this.projects_title_ref = React.createRef();
+    this.projects_first_ref = React.createRef();
+    this.projects_second_ref = React.createRef();
 
     this.ref1 = {
       'home-title': [this.home_ref, 'home_visible'],
@@ -41,7 +47,9 @@ export default class Body extends Component<any, any> {
       'about-who': [this.about_who_ref, 'about_who_visible'],
       'about-hobbies': [this.about_hobbies_ref, 'about_hobbies_visible'],
       'imageSlider': [this.images_ref, 'images_visible'],
-      'projects-title': [this.projects_ref, 'projects_visible']
+      'projects-title': [this.projects_title_ref, 'projects_title_visible'],
+      'projects-first': [this.projects_first_ref, 'projects_first_visible'],
+      'projects-second': [this.projects_second_ref, 'projects_second_visible'],
     }
   }
 
@@ -85,6 +93,10 @@ export default class Body extends Component<any, any> {
       }
     }
   };
+
+  yes = (project: string) => {
+    console.log(project);
+  }
 
     render() {
         const {height, width} = this.state;
@@ -144,15 +156,33 @@ export default class Body extends Component<any, any> {
                     </div>
                 </section>
                 <section className="projects">
-                    <div className="projects-title" id='projects' ref={this.projects_ref}>
-                      <h2 className={this.state.projects_visible ? 'animate-after': 'animate-before'}>This is the Projects component</h2>
+                    <div className="projects-title" id='projects' ref={this.projects_title_ref}>
+                      <h2 className={this.state.projects_title_visible ? 'animate-after': 'animate-before'}>This is the Projects component</h2>
                     </div>  
                     <div className="projects-main">
                       <div className="left-column">
+                        <div className="projects-first" ref={this.projects_first_ref}>
+                          <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button' onClick={() => this.yes("PythonInterpreter")}>
+                            
+                          </div>
+                        </div>
+                        <div className="projects-second" ref={this.projects_second_ref}>
+                          <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button' onClick={() => this.yes("EarthquakeDetection")}>
 
+                          </div>
+                        </div>
                       </div>
                       <div className="right-column">
+                        <div className="projects-first" ref={this.projects_first_ref}>
+                          <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button' onClick={() => this.yes("ECommerceWebsite")}>
 
+                          </div>
+                        </div>
+                        <div className="projects-second" ref={this.projects_second_ref}>
+                          <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button' onClick={() => this.yes("SomethingElse")}>
+                            
+                          </div>     
+                        </div>
                       </div>
                     </div>               
                 </section>
