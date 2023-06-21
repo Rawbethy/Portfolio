@@ -94,10 +94,6 @@ export default class Body extends Component<any, any> {
     }
   };
 
-  yes = (project: string) => {
-    console.log(project);
-  }
-
     render() {
         const {height, width} = this.state;
         
@@ -162,25 +158,25 @@ export default class Body extends Component<any, any> {
                     <div className="projects-main">
                       <div className="left-column">
                         <div className="projects-first" ref={this.projects_first_ref}>
-                          <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button' onClick={() => this.yes("PythonInterpreter")}>
-                            
+                          <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                            <span className=''>Python Interpreter</span>
                           </div>
                         </div>
                         <div className="projects-second" ref={this.projects_second_ref}>
-                          <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button' onClick={() => this.yes("EarthquakeDetection")}>
-
+                          <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                            <span className=''>Earthquake Detection</span>
                           </div>
                         </div>
                       </div>
                       <div className="right-column">
                         <div className="projects-first" ref={this.projects_first_ref}>
-                          <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button' onClick={() => this.yes("ECommerceWebsite")}>
-
+                          <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                            <span className=''>E-Commerce Website</span>
                           </div>
                         </div>
                         <div className="projects-second" ref={this.projects_second_ref}>
-                          <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button' onClick={() => this.yes("SomethingElse")}>
-                            
+                          <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                            <span className=''>Something Else</span>
                           </div>     
                         </div>
                       </div>

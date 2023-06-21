@@ -16,14 +16,6 @@
     width: auto;
 }
 
-/* .projects-cards {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    height: 50%;
-    width: 100%;
-} */
-
 .projects-first, .projects-second {
     display: flex;
     align-items: center;
@@ -34,11 +26,32 @@
 
 .projects-content {
     position: relative;
+    text-align: center;
     width: 75%;
     max-width: 400px;
-    height: 75%;
+    height: 70%;
     background-color: white;
     cursor: pointer;
+}
+
+.projects-content span {
+    position: relative;
+    opacity: 0;
+    font-size: 30px;
+    font-weight: 600;
+    display: inline-block;
+    top: 40%
+}
+
+.projects-content:hover {
+    transition: all 1s;
+    opacity: .7
+}
+
+.projects-content:hover span {
+    transition: all 1s;
+    color: rgb(0, 0, 0);
+    opacity: 1
 }
 
 .left-column {
