@@ -158,26 +158,47 @@ export default class Body extends Component<any, any> {
                     <div className="projects-main">
                       <div className="left-column">
                         <div className="projects-first" ref={this.projects_first_ref}>
-                          <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
-                            <span className=''>Python Interpreter</span>
+                          <div className="projects-card">
+                            <div className={this.state.projects_first_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
+                              <h2>Python Interpreter</h2>
+                            </div>
+                            <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                              <span className=''>View</span>
+                              <img src='https://drive.google.com/uc?export=view&id=1GUwot9sOCMTl03xbD2C3gfu_7GgMcInS' alt=""/>
+                            </div>
                           </div>
                         </div>
                         <div className="projects-second" ref={this.projects_second_ref}>
-                          <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
-                            <span className=''>Earthquake Detection</span>
+                          <div className="projects-card">
+                            <div className={this.state.projects_first_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
+                              <h2>E-Commerce Website</h2>
+                            </div>
+                            <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                              <span className=''>View</span>
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div className="right-column">
                         <div className="projects-first" ref={this.projects_first_ref}>
-                          <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
-                            <span className=''>E-Commerce Website</span>
+                          <div className="projects-card">
+                            <div className={this.state.projects_first_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
+                              <h2>Earthquake Detection</h2>
+                            </div>
+                            <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                              <span className=''>View</span>
+                            </div>
                           </div>
                         </div>
                         <div className="projects-second" ref={this.projects_second_ref}>
-                          <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
-                            <span className=''>Something Else</span>
-                          </div>     
+                          <div className="projects-card">
+                            <div className={this.state.projects_first_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
+                              <h2>Something Else</h2>
+                            </div>
+                            <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                              <span className=''>View</span>
+                            </div>
+                          </div>    
                         </div>
                       </div>
                     </div>               
