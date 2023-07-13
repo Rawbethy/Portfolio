@@ -1,8 +1,9 @@
 import React, { Component, ReactElement} from 'react';
 import SimpleImageSlider from 'react-simple-image-slider';
 import Desc from '../Utils/Descriptions';
-import './styles.css';
+import './styles/general-styles.css'
 import './styles/projects-styles.css';
+import './styles/about-styles.css'
 
 export default class Body extends Component<any, any> {
 
@@ -170,7 +171,7 @@ export default class Body extends Component<any, any> {
                         </div>
                         <div className="projects-second" ref={this.projects_second_ref}>
                           <div className="projects-card">
-                            <div className={this.state.projects_first_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
+                            <div className={this.state.projects_second_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
                               <h2>E-Commerce Website</h2>
                             </div>
                             <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
@@ -193,7 +194,7 @@ export default class Body extends Component<any, any> {
                         </div>
                         <div className="projects-second" ref={this.projects_second_ref}>
                           <div className="projects-card">
-                            <div className={this.state.projects_first_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
+                            <div className={this.state.projects_second_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
                               <h2>Something Else</h2>
                             </div>
                             <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
