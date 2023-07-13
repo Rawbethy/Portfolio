@@ -163,8 +163,8 @@ export default class Body extends Component<any, any> {
                               <h2>Python Interpreter</h2>
                             </div>
                             <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
-                              <span className=''>View</span>
                               <img src='https://drive.google.com/uc?export=view&id=1GUwot9sOCMTl03xbD2C3gfu_7GgMcInS' alt=""/>
+                              <span className=''>View</span>                                
                             </div>
                           </div>
                         </div>
@@ -186,6 +186,7 @@ export default class Body extends Component<any, any> {
                               <h2>Earthquake Detection</h2>
                             </div>
                             <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                              <img src="https://drive.google.com/uc?export=view&id=1-jq36-V76kM2n1OX5aI70a_wLqv3T8xV" alt="" />
                               <span className=''>View</span>
                             </div>
                           </div>

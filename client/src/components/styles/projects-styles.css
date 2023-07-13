@@ -36,7 +36,8 @@
     position: relative;
     width: 75%;
     height: 70%;
-    max-width: 500px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .projects-header {
@@ -51,11 +52,15 @@
 }
 
 .projects-content span {
-    position: relative;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    margin-left: auto;
+    margin-right: auto;
     opacity: 0;
     font-size: 30px;
     font-weight: 600;
-    top: 40%
 }
 
 .projects-content img {
