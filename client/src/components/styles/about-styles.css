@@ -6,9 +6,15 @@
 }
 
 .about-who, .hobbies{
-    margin: 45px 0px 45px 0px
+    margin: 45px 0px 45px 0px;
+    text-align: center;
 }
 
+.desc {
+    margin: auto;
+    position: relative;
+    width: 80%;
+}
 
 .hobbies {
     position: relative;

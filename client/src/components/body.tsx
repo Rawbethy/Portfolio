@@ -127,7 +127,9 @@ export default class Body extends Component<any, any> {
                       <div className="sub-title2">
                         <h3 className={this.state.about_who_visible ? 'animate-after-sub': 'animate-before'}>Who am I?</h3>
                       </div>
-                      <p className={this.state.about_who_visible ? 'animate-after': 'animate-before'}>{Desc.AboutMe}</p>
+                      <div className="desc">
+                        <p className={this.state.about_who_visible ? 'animate-after': 'animate-before'}>{Desc.AboutMe}</p>
+                      </div>
                     </div>
                     <div className='hobbies' id='hobbies'>
                       <div className="about-hobbies" ref={this.about_hobbies_ref}>
@@ -157,30 +159,20 @@ export default class Body extends Component<any, any> {
                       <h2 className={this.state.projects_title_visible ? 'animate-after': 'animate-before'}>This is the Projects component</h2>
                     </div>  
                     <div className="projects-main">
-                      <div className="left-column">
+                      <div className="first-row">
+                        
                         <div className="projects-first" ref={this.projects_first_ref}>
-                          <div className="projects-card">
-                            <div className={this.state.projects_first_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
-                              <h2>Python Interpreter</h2>
+                            <div className="projects-card">
+                              <div className={this.state.projects_first_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
+                                <h2>Python Interpreter</h2>
+                              </div>
+                              <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                                <img src='https://drive.google.com/uc?export=view&id=1GUwot9sOCMTl03xbD2C3gfu_7GgMcInS' alt=""/>
+                                <span className=''>View</span>                                
+                              </div>
                             </div>
-                            <div className={this.state.projects_first_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
-                              <img src='https://drive.google.com/uc?export=view&id=1GUwot9sOCMTl03xbD2C3gfu_7GgMcInS' alt=""/>
-                              <span className=''>View</span>                                
-                            </div>
-                          </div>
-                        </div>
-                        <div className="projects-second" ref={this.projects_second_ref}>
-                          <div className="projects-card">
-                            <div className={this.state.projects_second_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
-                              <h2>E-Commerce Website</h2>
-                            </div>
-                            <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
-                              <span className=''>View</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="right-column">
+                          </div>  
+
                         <div className="projects-first" ref={this.projects_first_ref}>
                           <div className="projects-card">
                             <div className={this.state.projects_first_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
@@ -191,7 +183,23 @@ export default class Body extends Component<any, any> {
                               <span className=''>View</span>
                             </div>
                           </div>
-                        </div>
+                        </div>                                              
+
+                      </div>
+
+                      <div className="second-row">
+
+                        <div className="projects-second" ref={this.projects_second_ref}>
+                          <div className="projects-card">
+                            <div className={this.state.projects_second_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
+                              <h2>E-Commerce Website</h2>
+                            </div>
+                            <div className={this.state.projects_second_visible ? 'projects-content animate-after': 'projects-content animate-before'} role='button'>
+                              <span className=''>View</span>
+                            </div>
+                          </div>
+                        </div> 
+
                         <div className="projects-second" ref={this.projects_second_ref}>
                           <div className="projects-card">
                             <div className={this.state.projects_second_visible ? 'projects-header animate-after': 'projects-header animate-before'} >
@@ -201,7 +209,8 @@ export default class Body extends Component<any, any> {
                               <span className=''>View</span>
                             </div>
                           </div>    
-                        </div>
+                        </div>                                   
+
                       </div>
                     </div>               
                 </section>

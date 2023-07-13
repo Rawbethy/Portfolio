@@ -59,8 +59,11 @@ nav button:hover::after {
     transform-origin: bottom left;
 }
 
-.home-title {
+.home, .about, .projects {
     position: relative;
+}
+
+.home-title {
     text-align: center;
     color: white;
     margin-left: 5%;
@@ -85,8 +88,6 @@ a {
 
 p {
     color: white;
-    margin-left: 5%;
-    margin-right: 5%;
     font-size: 18px;
     font-style: italic;
 }
